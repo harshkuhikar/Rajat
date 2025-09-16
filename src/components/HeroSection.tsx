@@ -67,10 +67,29 @@ const HeroSection = () => {
       name: "Instagram",
       color: "bg-gradient-to-br from-purple-500 to-pink-500",
       delay: 100,
+      link: "https://www.instagram.com/sparksocialmedia.in/",
     },
-    { icon: Facebook, name: "Facebook", color: "bg-blue-600", delay: 200 },
-    { icon: Linkedin, name: "LinkedIn", color: "bg-blue-700", delay: 400 },
-    { icon: Youtube, name: "YouTube", color: "bg-red-600", delay: 500 },
+    {
+      icon: Facebook,
+      name: "Facebook",
+      color: "bg-blue-600",
+      delay: 200,
+      link: "https://www.instagram.com/_rajatsrivastava/",
+    },
+    {
+      icon: Linkedin,
+      name: "LinkedIn",
+      color: "bg-blue-700",
+      delay: 400,
+      link: "https://www.instagram.com/_rajatsrivastava/",
+    },
+    {
+      icon: Youtube,
+      name: "YouTube",
+      color: "bg-red-600",
+      delay: 500,
+      link: "https://www.instagram.com/_rajatsrivastava/",
+    },
   ];
 
   return (
@@ -107,7 +126,7 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800/70 backdrop-blur-sm border border-gray-700/50 text-gray-300 mb-6">
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span>Content that makes your brand shine</span>
+              <span>Ignite your brands potential</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 text-white">
@@ -130,7 +149,7 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
-                className="text-lg px-8 py-6 bg-black hover:bg-gray-700 text-white hover:border-gray-600 border-2 rounded-full shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-gray-700 group"
+                className="text-lg px-8 py-6 bg-black hover:bg-gray-700 text-white hover:border-gray-600 border-2 rounded-full shadow-md shadow-cyan-500/20 transition-all duration-300 hover:shadow-md hover:shadow-gray-700 group"
                 onClick={() =>
                   document
                     .getElementById("contact")
@@ -178,15 +197,17 @@ const HeroSection = () => {
                 </div>
 
                 {/* Social media icons in a grid */}
-                <div className="grid grid-cols-3 md:grid-cols-6 gap-6 relative z-10">
-                  {socialIcons.map((social, index) => (
-                    <SocialIcon
+                <div className="flex gap-3 sm:gap-6 relative z-10">
+                  {socialIcons.map((item, index) => (
+                    <a
                       key={index}
-                      icon={social.icon}
-                      name={social.name}
-                      color={social.color}
-                      delay={social.delay}
-                    />
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-3 rounded-full ${item.color}`}
+                    >
+                      <item.icon className="w-6 h-6 text-white" />
+                    </a>
                   ))}
                 </div>
 
